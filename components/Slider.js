@@ -1,25 +1,62 @@
+import { useState } from "react";
+
 //Import UI
 import styles from "../styles/Slider.module.css";
 import Image from "next/image";
 
 const Slider = () => {
+  const [index, setIndex] = useState(0);
+
   const images = [
     "/img/featured.png",
     "/img/featured2.png",
     "/img/featured3.png",
   ];
-
+  console.log(-100 * index);
   return (
     <div className={styles.container}>
-      <Image src="/img/arrowl.png" alt="left arrow" width="32" height="32" />
-      <div className={styles.wrapper}>
-        <div className={styles.imageContainer}>
-          {images.map((item, index) => (
-            <Image key={index} src={item} alt={item} width="32" height="32" />
-          ))}
-        </div>
+      <div
+        className={styles.arrowContainer}
+        onClick={() =>
+          setIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1))
+        }
+      >
+        <Image
+          src="/img/arrowl.png"
+          alt="left arrow"
+          fill
+          style={{ objectFit: "contain" }}
+        />
       </div>
-      <Image src="/img/arrowr.png" alt="right arrow" width="32" height="32" />
+      <div
+        className={styles.wrapper}
+        style={{ transform: `translateX(${-100 * index}vw)` }}
+      >
+        {images.map((item, index) => (
+          <div className={styles.imgContainer} key={index}>
+            <Image
+              src={item}
+              alt={item}
+              fill
+              style={{ objectFit: "contain" }}
+            />
+          </div>
+        ))}
+      </div>
+      <div
+        className={styles.arrowContainer}
+        style={{ right: 0 }}
+        onClick={() =>
+          setIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))
+        }
+      >
+        <Image
+          src="/img/arrowr.png"
+          alt="right arrow"
+          fill
+          style={{ objectFit: "contain" }}
+        />
+      </div>
     </div>
   );
 };
