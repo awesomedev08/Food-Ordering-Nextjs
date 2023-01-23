@@ -5,6 +5,7 @@ import styles from "@/styles/Home.module.css";
 
 //Import components
 import Slider from "@/components/Slider";
+import ProductList from "@/components/ProductList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slider />
+      <ProductList />
     </>
   );
 }

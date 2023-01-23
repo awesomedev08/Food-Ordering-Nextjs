@@ -8,11 +8,11 @@ const Slider = () => {
   const [index, setIndex] = useState(0);
 
   const images = [
-    "/img/featured.png",
     "/img/featured2.png",
     "/img/featured3.png",
+    "/img/featured.png",
   ];
-  console.log(-100 * index);
+
   return (
     <div className={styles.container}>
       <div
