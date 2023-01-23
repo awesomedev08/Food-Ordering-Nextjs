@@ -1,0 +1,39 @@
+.container{
+  height: calc(100vh - 100px);
+  display: flex;
+  background-color: #222;
+}
+
+.item {
+  flex: 1;
+  position: relative;
+  display: flex;
+}
+
+.item:last-child{
+  flex: 2;
+  padding: 70px;
+}
+
+.card{
+  flex: 1;
+  padding: 0 20px;
+}
+
+.title{
+  color: #b7903c;
+}
+
+.text{
+  color: lightgray;
+  padding: 10px 0px;
+}
+
+.subText{
+  display: block;
+}
+
+.motto{
+  color: rgb(231, 229, 229);
+  font-size: 1.9rem;
+}
