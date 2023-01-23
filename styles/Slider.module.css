@@ -1,7 +1,7 @@
 .container{
   height: calc(100vh - 100px);
   background: #d1411e;
-  margin-top: 100px;
+  overflow: hidden;
 }
 
 .arrowContainer{

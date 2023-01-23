@@ -77,13 +77,12 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* outline: 1px solid green; */
+  outline: 1px solid green;
 }
 
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
 }
 
 body {
