@@ -1,6 +1,7 @@
 .container{
   height: calc(100vh - 100px);
   background: #d1411e;
+  margin-top: 100px;
 }
 
 .arrowContainer{
@@ -10,7 +11,7 @@
   top: 0;
   bottom: 0;
   margin: auto;
-  z-index: 10;
+  z-index: 2;
   cursor: pointer
 }
 
