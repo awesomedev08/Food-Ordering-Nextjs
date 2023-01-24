@@ -6,11 +6,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
-  
-  top: 0;
   color: #FFFFFE;
   z-index: 3;
+  top: 0;
+  position: sticky;
 }
 
 .item{
