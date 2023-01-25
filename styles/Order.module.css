@@ -85,3 +85,55 @@
   border: none;
   color: teal;
 }
+
+@media screen and (max-width: 480px){
+  .container{
+    flex-direction: column;
+    padding: 25px;
+  }
+
+  .trTitle{
+    display: none;
+  }
+
+  .tr{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .total{
+    font-size: 1.2rem;
+  }
+
+  .id::before{
+    content: "Order ID: ";
+    font-weight: bold;
+  }
+  .name::before{
+    content: "Name: ";
+    font-weight: bold;
+  }
+  .address::before{
+    content: "Address: ";
+    font-weight: bold;
+  }
+  .total::before{
+    content: "Total: ";
+    font-weight: bold; 
+  }
+
+  .table{
+    margin-bottom: 20px;
+  }
+
+  .row:last-child{
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .wrapper{
+    width: 100%;
+    padding: 25px;
+  }
+}

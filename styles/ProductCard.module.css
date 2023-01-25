@@ -33,3 +33,19 @@
   padding: 5px 0;
   color: #666;
 }
+
+@media screen and (max-width: 480px) {
+  .container{
+    width: 100%;
+  }
+
+  .title{
+    font-size: 2rem;
+  }
+
+  .price,
+  .desc{
+    font-size: 1.5rem;
+  }
+
+}
