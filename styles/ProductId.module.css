@@ -75,14 +75,14 @@
 
 .ingredients{
   display: flex;
-  align-items: center;
+  width: 70%;
+  justify-content: space-around;
 }
 
 .option{
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
   font-weight: 500;
 }
 
@@ -94,6 +94,7 @@
 
 .add{
   margin-top: 35px;
+  display: flex;
 }
 
 .quantity{
@@ -114,3 +115,46 @@
   font-weight: 500;
 }
 
+@media screen and (max-width: 480px) {
+  .container{
+    height: auto;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .imgContainer{
+    width: 70vw;
+    height: 70vw;
+  }
+
+  .right{
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 40px;
+  }
+
+  .sizes{
+    width: 80%;
+  }
+
+  .ingredients{
+    width: 100%;
+  }
+
+  .option{
+    font-size: 0.9rem;
+    margin-right: 10px;
+    border: 1px solid lightgray;
+    padding: 4px 2px;
+  }
+  
+  .checkbox{
+    margin-right: 0;
+  }
+
+  .add{
+    margin-top: 10px;
+  }
+}

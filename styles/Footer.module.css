@@ -37,3 +37,25 @@
   color: rgb(231, 229, 229);
   font-size: 1.9rem;
 }
+
+@media screen and (max-width: 480px) {
+
+  .container{
+    height: auto;
+    text-align: center;
+  }
+
+  .item:first-child{
+    display: none
+  }
+
+  .item:last-child{
+    padding: 40px;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .title{
+    font-size: 1.4rem;
+  }
+}

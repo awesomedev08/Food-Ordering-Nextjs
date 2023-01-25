@@ -33,7 +33,9 @@ const Order = () => {
                   <span className={styles.name}>John Doe</span>
                 </td>
                 <td>
-                  <span className={styles.address}>₱499</span>
+                  <span className={styles.address}>
+                    OA 999 La Trinidad Philippines
+                  </span>
                 </td>
                 <td>
                   <span className={styles.total}>₱998</span>
