@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/font": "13.1.4",
+    "axios": "^1.2.4",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.4",
     "mongoose": "^6.8.4",
