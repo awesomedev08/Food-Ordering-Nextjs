@@ -6,7 +6,6 @@ import Image from "next/image";
 import styles from "styles/ProductList.module.css";
 
 const ProductList = ({ productList }) => {
-  console.log(productList);
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>THE BEST PIZZA IN TOWN</h1>
