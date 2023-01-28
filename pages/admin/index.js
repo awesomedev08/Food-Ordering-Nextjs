@@ -1,9 +1,22 @@
 //Import UI
 import styles from "styles/Admin.module.css";
 import Image from "next/image";
+
 import axios from "axios";
+import { useState } from "react";
 
 const Admin = ({ orders, products }) => {
+  const [productList, setProductList] = useState(products);
+  const [orderList, setOrderList] = useState(orders);
+
+  const handleDelete = async (id) => {
+    try {
+      const res = await axios.delete("http://localhost:3000/products/" + id);
+      setProductList(productList.filter((pizza) => pizza._id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -19,24 +32,31 @@ const Admin = ({ orders, products }) => {
             </tr>
           </thead>
           <tbody>
-            <tr className={styles.trTitle}>
-              <td>
-                <Image
-                  src="/img/pizza.png"
-                  width={50}
-                  height={50}
-                  alt=""
-                  style={{ objectFit: "cover" }}
-                />
-              </td>
-              <td>Pizza Id</td>
-              <td>Pizza Title</td>
-              <td>₱499</td>
-              <td>
-                <button className={styles.button}>Edit</button>
-                <button className={styles.button}>Delete</button>
-              </td>
-            </tr>
+            {productList.map((item) => (
+              <tr key={item._id} className={styles.trTitle}>
+                <td>
+                  <Image
+                    src={item.img}
+                    width={50}
+                    height={50}
+                    alt=""
+                    style={{ objectFit: "cover" }}
+                  />
+                </td>
+                <td>{item._id}</td>
+                <td>{item.title}</td>
+                <td>₱{item.prices[0]}</td>
+                <td>
+                  <button className={styles.button}>Edit</button>
+                  <button
+                    className={styles.button}
+                    onClick={() => handleDelete(item._id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
@@ -54,6 +74,7 @@ const Admin = ({ orders, products }) => {
             </tr>
           </thead>
           <tbody>
+            {/* {orders.map()} */}
             <tr className={styles.trTitle}>
               <td>213213213213</td>
               <td>John Doe</td>
