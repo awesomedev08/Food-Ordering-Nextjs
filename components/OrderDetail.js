@@ -8,7 +8,6 @@ const OrderDetail = ({ total, createOrder }) => {
   const [customer, setCustomer] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  console.log(total);
 
   const handleClick = () => {
     createOrder({ customer, address, total, method: 0 });
@@ -16,7 +15,7 @@ const OrderDetail = ({ total, createOrder }) => {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <h1 className={styles.title}>You will pay $12 after delivery</h1>
+        <h1 className={styles.title}>You will pay ₱{total} after delivery</h1>
         <div className={styles.item}>
           <label className={styles.label}>Name Surname</label>
           <input
