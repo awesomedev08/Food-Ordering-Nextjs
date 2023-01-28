@@ -5,6 +5,7 @@
 
 .left{
   flex:2;
+  margin-right: 50px;
 }
 
 .table{
