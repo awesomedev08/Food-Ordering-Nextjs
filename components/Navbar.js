@@ -25,7 +25,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className={styles.item}>
-        <div className={styles.link}>Homepage</div>
+        <div className={styles.link}>
+          <Link href="/" passHref>
+            Homepage
+          </Link>
+        </div>
         <div className={styles.link}>Products</div>
         <div className={styles.link}>Menu</div>
         <div className={styles.link}>J's Pizza</div>

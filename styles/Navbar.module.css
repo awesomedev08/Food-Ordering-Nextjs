@@ -40,6 +40,7 @@
 
 .link{
   font-size: 1.1rem;
+  cursor: pointer;
 }
 
 .link:nth-child(4){
