@@ -8,15 +8,36 @@ import { useState } from "react";
 const Admin = ({ orders, products }) => {
   const [productList, setProductList] = useState(products);
   const [orderList, setOrderList] = useState(orders);
+  const status = ["preparing", "on the way", "delivered"];
 
   const handleDelete = async (id) => {
     try {
-      const res = await axios.delete("http://localhost:3000/products/" + id);
+      const res = await axios.delete(
+        "http://localhost:3000/api/products/" + id
+      );
       setProductList(productList.filter((pizza) => pizza._id !== id));
     } catch (error) {
       console.log(error);
     }
   };
+
+  const handleStatus = async (id) => {
+    const item = orderList.filter((order) => order._id === id)[0];
+    const currentStatus = item.status;
+
+    try {
+      const res = await axios.put("http://localhost:3000/api/orders/" + id, {
+        status: currentStatus + 1,
+      });
+      setOrderList([
+        res.data,
+        ...orderList.filter((order) => order._id !== id),
+      ]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.item}>
@@ -74,17 +95,25 @@ const Admin = ({ orders, products }) => {
             </tr>
           </thead>
           <tbody>
-            {/* {orders.map()} */}
-            <tr className={styles.trTitle}>
-              <td>213213213213</td>
-              <td>John Doe</td>
-              <td>Pizza Name</td>
-              <td>Paid</td>
-              <td>Preparing</td>
-              <td>
-                <button className={styles.stageButton}>Next Stage</button>
-              </td>
-            </tr>
+            {orderList.map((order) => (
+              <tr key={order._id} className={styles.trTitle}>
+                <td>{order._id}</td>
+                <td>{order.customer}</td>
+                <td>{order.total}</td>
+                <td>
+                  {order.method === 0 ? <span>cash</span> : <span>paid</span>}
+                </td>
+                <td>{status[order.status]}</td>
+                <td>
+                  <button
+                    className={styles.stageButton}
+                    onClick={() => handleStatus(order._id)}
+                  >
+                    Next Stage
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
