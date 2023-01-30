@@ -3,14 +3,19 @@ import Image from "next/image";
 import { Inter } from "@next/font/google";
 import styles from "@/styles/Home.module.css";
 import axios from "axios";
+import { useState } from "react";
 
 //Import components
 import Slider from "@/components/Slider";
 import ProductList from "@/components/ProductList";
+import AddButton from "@/components/AddButton";
+import Add from "@/components/Add";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ productList, admin }) {
+  const [close, setClose] = useState(true);
+
   return (
     <>
       <Head>
@@ -20,8 +25,9 @@ export default function Home({ productList, admin }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slider />
-      {admin && <span>Hello</span>}
+      {admin && <AddButton setClose={setClose} />}
       <ProductList productList={productList} />
+      {!close && <Add />}
     </>
   );
 }
