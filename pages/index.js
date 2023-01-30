@@ -10,7 +10,7 @@ import ProductList from "@/components/ProductList";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home({ productList }) {
+export default function Home({ productList, admin }) {
   return (
     <>
       <Head>
@@ -20,17 +20,26 @@ export default function Home({ productList }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Slider />
+      {admin && <span>Hello</span>}
       <ProductList productList={productList} />
     </>
   );
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async (ctx) => {
   try {
+    const myCookie = ctx.req?.cookies || "";
+    let admin = false;
+
+    if (myCookie.token === process.env.TOKEN) {
+      admin = true;
+    }
+
     const res = await axios.get("http://localhost:3000/api/products");
     return {
       props: {
         productList: res.data,
+        admin,
       },
     };
   } catch (error) {
