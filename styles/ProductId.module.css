@@ -75,8 +75,8 @@
 
 .ingredients{
   display: flex;
-  width: 70%;
-  justify-content: space-around;
+  width: 50%;
+  gap: 20px;
 }
 
 .option{
