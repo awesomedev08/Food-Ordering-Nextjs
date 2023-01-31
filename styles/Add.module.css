@@ -48,3 +48,68 @@
   cursor: pointer;
 }
 
+.item{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.label{
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.input{
+  border: none;
+  border-bottom: 1px solid rgb(172, 170, 170);
+}
+
+.priceContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.inputSm{
+  width: 25%;
+}
+
+.extra{
+  display: flex;
+  justify-content: space-between;
+}
+
+.extraButton{
+  width: 50px;
+  padding: 3px 0;
+  border: 1.5px solid black
+}
+
+.extraItems{
+  margin: 10px 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.extraItem{
+  padding: 5px;
+  font-size: 0.9rem;
+  border: 1px solid tomato;
+  background-color: white;
+  color: tomato;
+  margin-right: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.addButton{
+  width: 25%;
+  border: none;
+  background-color: teal;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 5px 0;
+  align-self: flex-end;
+}
+
