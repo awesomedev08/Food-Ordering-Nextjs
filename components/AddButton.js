@@ -1,5 +1,5 @@
 //Import UI
-import styles from "../styles/AddButton.module.css";
+import styles from "../styles/Add.module.css";
 
 const AddButton = ({ setClose }) => {
   return (
