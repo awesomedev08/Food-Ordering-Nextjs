@@ -14,7 +14,7 @@ import Add from "@/components/Add";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ productList, admin }) {
-  const [close, setClose] = useState(true);
+  const [close, setClose] = useState(false);
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function Home({ productList, admin }) {
       <Slider />
       {admin && <AddButton setClose={setClose} />}
       <ProductList productList={productList} />
-      {!close && <Add />}
+      {!close && <Add setClose={setClose} />}
     </>
   );
 }
