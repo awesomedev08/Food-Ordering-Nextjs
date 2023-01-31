@@ -14,7 +14,7 @@ import Add from "@/components/Add";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home({ productList, admin }) {
-  const [close, setClose] = useState(false);
+  const [close, setClose] = useState(true);
 
   return (
     <>
