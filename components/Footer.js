@@ -4,7 +4,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <div className={styles.container}>
+    <div id="footer" className={styles.container}>
       <div className={styles.item}>
         <Image src="/img/bg.png" alt="footer background" fill />
       </div>

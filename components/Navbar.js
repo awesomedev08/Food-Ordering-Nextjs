@@ -30,12 +30,24 @@ const Navbar = () => {
             Homepage
           </Link>
         </div>
-        <div className={styles.link}>Products</div>
-        <div className={styles.link}>Menu</div>
-        <div className={styles.link}>J's Pizza</div>
-        <div className={styles.link}>Events</div>
-        <div className={styles.link}>Blog</div>
-        <div className={styles.link}>Contact</div>
+        <a href="#products" className={styles.link}>
+          Products
+        </a>
+        <a href="#products" className={styles.link}>
+          Menu
+        </a>
+        <a href="/" className={styles.link}>
+          J's Pizza
+        </a>
+        <a href="#footer" className={styles.link}>
+          Events
+        </a>
+        <a href="#footer" className={styles.link}>
+          Blog
+        </a>
+        <a href="#footer" className={styles.link}>
+          Contact
+        </a>
       </div>
       <div className={styles.item}>
         <Link href="/cart" passHref>
