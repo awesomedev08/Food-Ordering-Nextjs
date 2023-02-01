@@ -38,7 +38,9 @@ export const getServerSideProps = async (ctx) => {
   }
 
   try {
-    const res = await axios.get("http://localhost:3000/api/products");
+    const res = await axios.get(
+      "https://food-ordering-nextjs-blue.vercel.app/api/products"
+    );
     return {
       props: {
         productList: res.data,

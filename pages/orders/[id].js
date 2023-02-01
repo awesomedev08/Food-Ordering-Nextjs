@@ -123,7 +123,7 @@ const Order = ({ order }) => {
 export const getServerSideProps = async ({ params }) => {
   try {
     const res = await axios.get(
-      `http://localhost:3000/api/orders/${params.id}`
+      `https://food-ordering-nextjs-blue.vercel.app/api/orders/${params.id}`
     );
     return {
       props: {
