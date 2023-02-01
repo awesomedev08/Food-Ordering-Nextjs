@@ -115,7 +115,7 @@
   font-weight: 500;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 992px) {
   .container{
     height: auto;
     flex-direction: column;

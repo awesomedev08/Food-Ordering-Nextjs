@@ -79,7 +79,7 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 480px){
+@media screen and (max-width: 992px){
   .container{
     flex-direction: column;
     padding: 15px;

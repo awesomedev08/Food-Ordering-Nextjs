@@ -15,8 +15,9 @@
 .button, .stageButton{
   border: none;
   color: white;
-  padding: 5px;
+  padding: 2px 5px;
   cursor: pointer;
+  margin-bottom: 4px;
 }
 
 .button:first-child, .stageButton{
