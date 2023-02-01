@@ -6,13 +6,15 @@ export default async function handler(req, res) {
 
   const token = cookies.token;
 
-  dbConnect();
+  await dbConnect();
 
   if (method === "GET") {
     try {
       const products = await Product.find();
       res.status(200).json(products);
+      // console.log(products);
     } catch (error) {
+      console.log(error);
       res.status(500).json(error);
     }
   }

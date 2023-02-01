@@ -14,7 +14,7 @@ export default function Home({ productList, admin }) {
   const [close, setClose] = useState(true);
 
   return (
-    <div className={container}>
+    <div className={styles.container}>
       <Head>
         <title>J's PIZZA | Food ordering application</title>
         <meta name="description" content="Best Pizza Shop" />
